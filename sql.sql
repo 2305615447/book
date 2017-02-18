@@ -46,7 +46,7 @@ create table bookuser
   phone varchar2(20),      --联系电话
   email varchar2(200),      --电子邮件地址
   freeze integer,        --该帐户是否被冻结(1可用，0被冻结)
-  status integer        --用户身份(1普通用户，2网站管理员)
+  status varchar2(10)  not null      --用户身份(1普通用户，2网站管理员)
 );
 
 insert into bookuser values(seq_bookuser.nextval,'mike','马志国','888888','徐州市','江苏省徐州市解放南路181号','221000','320726186702030011',1,5000.0,'13814423344','mikegood@163.com',1,2);
