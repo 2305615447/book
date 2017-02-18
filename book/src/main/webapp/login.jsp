@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <base href="/book/">
-<title>用户注册</title>
+<title>用户登录</title>
 <link type="text/css" rel="stylesheet" href="easyui/themes/icon.css">
 <link type="text/css" rel="stylesheet" href="easyui/themes/default/easyui.css">
 <link type="text/css" rel="stylesheet" href="css/login.css">

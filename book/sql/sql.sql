@@ -41,7 +41,7 @@ create table bookuser
   address varchar2(100),      --用户详细地址
   postcode varchar2(6),      --邮政编码
   cardNo varchar2(24),      --证件号码
-  grade integer,        --等级编号，折扣表外键
+   balance number(8,2) default 0,    		--用户余额
   amount float,        --累计消费金额
   phone varchar2(20),      --联系电话
   email varchar2(200),      --电子邮件地址
