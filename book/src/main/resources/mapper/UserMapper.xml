@@ -7,4 +7,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="getUser" parameterType="User" resultType="User">
 	    select * from bookuser where username=#{username} and  userpwd = #{userpwd}
 	</select>
+	
+		<insert id="insertUser" parameterType="EnrollUser">
+		insert into bookuser values(seq_bookuser.nextval,#{userName},#{trueName},#{userpwd},#{city},
+			#{address},#{postcode},#{cardNo},0,0.0,#{phone},#{email},1,'2')
+	</insert>
+	
 </mapper>

@@ -13,127 +13,127 @@ drop table bookuser;
 drop table bbs;
 drop sequence seq_bbs;
 
---åˆ›å»ºå…¬å‘Š(bbs)è¡¨
+--´´½¨¹«¸æ(bbs)±í
 create sequence seq_bbs start with 1;
 create table bbs(
-  bbsid Integer primary key,  --è‡ªå¢ä¸»é”®
-  title varchar2(50) not null,    --å…¬å‘Šæ ‡é¢˜
-  bbscontext varchar2(4000),      --å…¬å‘Šå†…å®¹
-  showtime date     --å…¬å‘Šå‘å¸ƒæ—¶é—´
+  bbsid Integer primary key,  --×ÔÔöÖ÷¼ü
+  title varchar2(50) not null,    --¹«¸æ±êÌâ
+  bbscontext varchar2(4000),      --¹«¸æÄÚÈİ
+  showtime date     --¹«¸æ·¢²¼Ê±¼ä
 ) ;
 
 
-insert into bbs values(seq_bbs.nextval,'æš‘å‡è´­ä¹¦æœˆæ´»åŠ¨å¼€å§‹å•¦','ç‚ç‚å¤æ—¥å·²åˆ°ï¼Œç¾å¥½çš„æš‘å‡å°±è¦æ¥äº†ï¼Œ
-åœ¨è¿™ä¸ªæ¼«é•¿çš„å‡æœŸä¸­ï¼Œä½ åœ¨å®¶é‡Œå¹ç€ç©ºè°ƒå¼€ç€ç”µè„‘ï¼Œä¼šä¸ä¼šç”Ÿå‡ºç©ºè™šä¹‹æ„Ÿï¼Ÿä¸ºäº†è®©å¤§å®¶èƒ½äº«å—åˆ°å……å®è€Œæœ‰è¶£çš„å‡æœŸï¼Œæœ¬ç«™ä¸¾åŠäº†æš‘å‡è´­ä¹¦æœˆæ´»åŠ¨ï¼Œ
-å‡¡å‡­å­¦ç”Ÿè¯åœ¨æœ¬ç«™è´­ä¹¦ï¼Œå‡äº«å—8æŠ˜ä¼˜æƒ ï¼Œæ—¶é—´ä¸º7æœˆ1æ—¥è‡³8æœˆ31æ—¥ï¼',to_date('2017-01-03','yyyy-mm-dd'));
+insert into bbs values(seq_bbs.nextval,'Êî¼Ù¹ºÊéÔÂ»î¶¯¿ªÊ¼À²','Ñ×Ñ×ÏÄÈÕÒÑµ½£¬ÃÀºÃµÄÊî¼Ù¾ÍÒªÀ´ÁË£¬
+ÔÚÕâ¸öÂş³¤µÄ¼ÙÆÚÖĞ£¬ÄãÔÚ¼ÒÀï´µ×Å¿Õµ÷¿ª×ÅµçÄÔ£¬»á²»»áÉú³ö¿ÕĞéÖ®¸Ğ£¿ÎªÁËÈÃ´ó¼ÒÄÜÏíÊÜµ½³äÊµ¶øÓĞÈ¤µÄ¼ÙÆÚ£¬±¾Õ¾¾Ù°ìÁËÊî¼Ù¹ºÊéÔÂ»î¶¯£¬
+·²Æ¾Ñ§ÉúÖ¤ÔÚ±¾Õ¾¹ºÊé£¬¾ùÏíÊÜ8ÕÛÓÅ»İ£¬Ê±¼äÎª7ÔÂ1ÈÕÖÁ8ÔÂ31ÈÕ£¡',to_date('2017-01-03','yyyy-mm-dd'));
 
 
 
---åˆ›å»ºç”¨æˆ·(users)è¡¨
+--´´½¨ÓÃ»§(users)±í
 create sequence seq_bookuser start with 1;
 create table bookuser
 (
-  userid integer primary key,  --è‡ªå¢ä¸»é”®
-  userName varchar2(20) not null,    --ç”¨æˆ·ç™»å½•å
-  trueName varchar2(20),      --ç”¨æˆ·çœŸå®å§“å
-  userpwd varchar2(20) not null,    --ç™»å½•å¯†ç 
-  city varchar2(20),      --ç”¨æˆ·æ‰€åœ¨åŸå¸‚
-  address varchar2(100),      --ç”¨æˆ·è¯¦ç»†åœ°å€
-  postcode varchar2(6),      --é‚®æ”¿ç¼–ç 
-  cardNo varchar2(24),      --è¯ä»¶å·ç 
-   balance number(8,2) default 0,    		--ç”¨æˆ·ä½™é¢
-  amount float,        --ç´¯è®¡æ¶ˆè´¹é‡‘é¢
-  phone varchar2(20),      --è”ç³»ç”µè¯
-  email varchar2(200),      --ç”µå­é‚®ä»¶åœ°å€
-  freeze integer,        --è¯¥å¸æˆ·æ˜¯å¦è¢«å†»ç»“(1å¯ç”¨ï¼Œ0è¢«å†»ç»“)
-  status varchar2(10)  not null      --ç”¨æˆ·èº«ä»½(1æ™®é€šç”¨æˆ·ï¼Œ2ç½‘ç«™ç®¡ç†å‘˜)
+  userid integer primary key,  --×ÔÔöÖ÷¼ü
+  userName varchar2(20) not null,    --ÓÃ»§µÇÂ¼Ãû
+  trueName varchar2(20),      --ÓÃ»§ÕæÊµĞÕÃû
+  userpwd varchar2(20) not null,    --µÇÂ¼ÃÜÂë
+  city varchar2(20),      --ÓÃ»§ËùÔÚ³ÇÊĞ
+  address varchar2(100),      --ÓÃ»§ÏêÏ¸µØÖ·
+  postcode varchar2(6),      --ÓÊÕş±àÂë
+  cardNo varchar2(24),      --Ö¤¼şºÅÂë
+   balance number(8,2) default 0,    		--ÓÃ»§Óà¶î
+  amount float,        --ÀÛ¼ÆÏû·Ñ½ğ¶î
+  phone varchar2(20),      --ÁªÏµµç»°
+  email varchar2(200),      --µç×ÓÓÊ¼şµØÖ·
+  freeze integer,        --¸ÃÕÊ»§ÊÇ·ñ±»¶³½á(1¿ÉÓÃ£¬0±»¶³½á)
+  status varchar2(10)  not null      --ÓÃ»§Éí·İ(1ÆÕÍ¨ÓÃ»§£¬2ÍøÕ¾¹ÜÀíÔ±)
 );
 
-insert into bookuser values(seq_bookuser.nextval,'admin','é©¬å¿—å›½','a','å¾å·å¸‚','æ±Ÿè‹çœå¾å·å¸‚è§£æ”¾å—è·¯181å·','221000','320726186702030011',1,5000.0,'13814423344','mikegood@163.com',1,'2');
-insert into bookuser values(seq_bookuser.nextval,'badboy','æ£è›‹é¬¼','444444','æœªçŸ¥','æœªçŸ¥','æœªçŸ¥','æœªçŸ¥',1,0.0,'æœªçŸ¥','æœªçŸ¥',0,'1');
-insert into bookuser values(seq_bookuser.nextval,'accp','å°å°é¸Ÿ','222222','å¾å·å¸‚','æ±Ÿè‹çœå¾å·å¸‚è§£æ”¾å—è·¯181å·','221000','320726186702030011',1,5000.0,'13814423344','mikegood@163.com',1,'1');
+insert into bookuser values(seq_bookuser.nextval,'admin','ÂíÖ¾¹ú','a','ĞìÖİÊĞ','½­ËÕÊ¡ĞìÖİÊĞ½â·ÅÄÏÂ·181ºÅ','221000','320726186702030011',1,5000.0,'13814423344','mikegood@163.com',1,'2');
+insert into bookuser values(seq_bookuser.nextval,'badboy','µ·µ°¹í','444444','Î´Öª','Î´Öª','Î´Öª','Î´Öª',1,0.0,'Î´Öª','Î´Öª',0,'1');
+insert into bookuser values(seq_bookuser.nextval,'accp','Ğ¡Ğ¡Äñ','222222','ĞìÖİÊĞ','½­ËÕÊ¡ĞìÖİÊĞ½â·ÅÄÏÂ·181ºÅ','221000','320726186702030011',1,5000.0,'13814423344','mikegood@163.com',1,'1');
 
 --select * from bookuser;
 select * from bookuser where userName='admin' and  userpwd = 'a' and status = '2';
 
 
---åˆ›å»ºå›¾ä¹¦ç§ç±»(bookType)è¡¨
+--´´½¨Í¼ÊéÖÖÀà(bookType)±í
 create sequence seq_bookType start with 1;
 create table bookType
 (
-  bTypeid integer primary key,  --è‡ªå¢ä¸»é”®
-  bTypeName varchar2(50) not null    --ç§ç±»åç§°
+  bTypeid integer primary key,  --×ÔÔöÖ÷¼ü
+  bTypeName varchar2(50) not null    --ÖÖÀàÃû³Æ
 );
 
-insert into bookType values(seq_bookType.Nextval,'è®¡ç®—æœº');
-insert into bookType values(seq_bookType.Nextval,'å°è¯´');
-insert into bookType values(seq_bookType.Nextval,'äººç‰©ä¼ è®°');
-insert into bookType values(seq_bookType.Nextval,'ç»æµç±»');
+insert into bookType values(seq_bookType.Nextval,'¼ÆËã»ú');
+insert into bookType values(seq_bookType.Nextval,'Ğ¡Ëµ');
+insert into bookType values(seq_bookType.Nextval,'ÈËÎï´«¼Ç');
+insert into bookType values(seq_bookType.Nextval,'¾­¼ÃÀà');
 --select * from bookType;
 
---åˆ›å»ºå›¾ä¹¦ä¿¡æ¯(books)è¡¨
+--´´½¨Í¼ÊéĞÅÏ¢(books)±í
 create sequence seq_book start with 1;
 create table book
 (
-  bookid Integer primary key,    --è‡ªå¢ä¸»é”®
-  isbn varchar2(20) not null,--ISBNå·ç 
-  bookName varchar2(200) not null,    --ä¹¦å
-  booktype integer references bookType(bTypeid),                  --å›¾ä¹¦ç±»å‹ç¼–å·ï¼Œå›¾ä¹¦ç§ç±»è¡¨å¤–é”®
-  publisher varchar2(100),   --å‡ºç‰ˆç¤¾
-  author varchar2(100),      --å›¾ä¹¦ä½œè€…
-  introduce varchar2(1000),  --å›¾ä¹¦ä¿¡æ¯ä»‹ç»
-  price float not null,      --å›¾ä¹¦ä»·æ ¼
-  pdate date,            --å‡ºç‰ˆæ—¶é—´
-  conver varchar2(100),      --å­˜å‚¨å›¾ä¹¦å°çš®å›¾ç‰‡ï¼Œæ­¤å¤„å­˜å‚¨çš„æ˜¯å›¾ç‰‡è·¯å¾„
-  intime date,               --å…¥åº“æ—¶é—´
-  newBook integer,           --æ˜¯å¦ä¸ºæ–°ä¹¦(1ä¸ºçœŸ 0ä¸ºå‡)
-  commend integer,           --æ˜¯å¦ä¸ºæ¨èå›¾ä¹¦(1ä¸ºçœŸ 0ä¸ºå‡)
-  quantity integer not null,     --åº“å­˜æ•°é‡
-  selled integer                 --é”€å”®æ•°é‡
+  bookid Integer primary key,    --×ÔÔöÖ÷¼ü
+  isbn varchar2(20) not null,--ISBNºÅÂë
+  bookName varchar2(200) not null,    --ÊéÃû
+  booktype integer references bookType(bTypeid),                  --Í¼ÊéÀàĞÍ±àºÅ£¬Í¼ÊéÖÖÀà±íÍâ¼ü
+  publisher varchar2(100),   --³ö°æÉç
+  author varchar2(100),      --Í¼Êé×÷Õß
+  introduce varchar2(1000),  --Í¼ÊéĞÅÏ¢½éÉÜ
+  price float not null,      --Í¼Êé¼Û¸ñ
+  pdate date,            --³ö°æÊ±¼ä
+  conver varchar2(100),      --´æ´¢Í¼Êé·âÆ¤Í¼Æ¬£¬´Ë´¦´æ´¢µÄÊÇÍ¼Æ¬Â·¾¶
+  intime date,               --Èë¿âÊ±¼ä
+  newBook integer,           --ÊÇ·ñÎªĞÂÊé(1ÎªÕæ 0Îª¼Ù)
+  commend integer,           --ÊÇ·ñÎªÍÆ¼öÍ¼Êé(1ÎªÕæ 0Îª¼Ù)
+  quantity integer not null,     --¿â´æÊıÁ¿
+  selled integer                 --ÏúÊÛÊıÁ¿
 );
 
 insert into book values(seq_book.nextval,'9787505418868',
-'å“ªä¸€å¹´è®©ä¸€ç”Ÿæ”¹å˜',1,'æœåå‡ºç‰ˆç¤¾','å§¬æµè§',
-'ä¸€ä»½å¥‘',25.00,to_date('2015-01-03','yyyy-mm-dd'),'00',to_date('2017-01-03','yyyy-mm-dd'),1,1,500,120);
+'ÄÄÒ»ÄêÈÃÒ»Éú¸Ä±ä',1,'³¯»ª³ö°æÉç','¼§Á÷õü',
+'Ò»·İÆõ',25.00,to_date('2015-01-03','yyyy-mm-dd'),'00',to_date('2017-01-03','yyyy-mm-dd'),1,1,500,120);
 --select * from book;
 
 
---åˆ›å»ºå›¾ä¹¦è¯„è®º(remark)è¡¨
+--´´½¨Í¼ÊéÆÀÂÛ(remark)±í
 create sequence seq_remark start with 1;
 create table remark(
-  remarkid integer primary key,  --è‡ªå¢ä¸»é”®
-  bookid integer references book(bookid),        --å›¾ä¹¦è¡¨å¤–é”®
-  userid integer references bookuser(userid),        --ç”¨æˆ·è¡¨å¤–é”®
-  rmcontent varchar2(1000)      --è¯„è®ºå†…å®¹
+  remarkid integer primary key,  --×ÔÔöÖ÷¼ü
+  bookid integer references book(bookid),        --Í¼Êé±íÍâ¼ü
+  userid integer references bookuser(userid),        --ÓÃ»§±íÍâ¼ü
+  rmcontent varchar2(1000)      --ÆÀÂÛÄÚÈİ
 )
 
 insert into remark values(seq_remark.nextval,1,1,'55555');
 --select * from remark;
 
---åˆ›å»ºå®šå•(orders)è¡¨
+--´´½¨¶¨µ¥(orders)±í
 create sequence seq_orders start with 1;
 create table orders
 (
-  orderid integer primary key,  --è‡ªå¢ä¸»é”®
-  userid integer references bookuser(userid),        --ç”¨æˆ·è¡¨å¤–é”®
-  pay varchar2(50),      --è®°å½•ç”¨æˆ·çš„ä»˜æ¬¾æ–¹å¼
-  carry varchar2(50),      --é‚®å¯„æ–¹å¼
-  address varchar2(100),      --é‚®å¯„åœ°å€
-  orderDate date,      --å®šå•ç”Ÿæˆæ—¥æœŸ
-  bz varchar2(1000),      --å®šå•å¤‡æ³¨ä¿¡æ¯
-  enforces integer        --è¯¥å®šå•æ˜¯å¦å·²æ‰§è¡Œå®Œæ¯•(1æ‰§è¡Œ 0æœªæ‰§è¡Œ)
+  orderid integer primary key,  --×ÔÔöÖ÷¼ü
+  userid integer references bookuser(userid),        --ÓÃ»§±íÍâ¼ü
+  pay varchar2(50),      --¼ÇÂ¼ÓÃ»§µÄ¸¶¿î·½Ê½
+  carry varchar2(50),      --ÓÊ¼Ä·½Ê½
+  address varchar2(100),      --ÓÊ¼ÄµØÖ·
+  orderDate date,      --¶¨µ¥Éú³ÉÈÕÆÚ
+  bz varchar2(1000),      --¶¨µ¥±¸×¢ĞÅÏ¢
+  enforces integer        --¸Ã¶¨µ¥ÊÇ·ñÒÑÖ´ĞĞÍê±Ï(1Ö´ĞĞ 0Î´Ö´ĞĞ)
 );
-insert into orders values(seq_orders.nextval,1,'æœªçŸ¥','æœªçŸ¥','è¡¡é˜³',to_date('2017-01-03','yyyy-mm-dd'),'000',0);
+insert into orders values(seq_orders.nextval,1,'Î´Öª','Î´Öª','ºâÑô',to_date('2017-01-03','yyyy-mm-dd'),'000',0);
 --select * from orders;
 
---åˆ›å»ºå®šå•æ˜ç»†(orderDetail)è¡¨
+--´´½¨¶¨µ¥Ã÷Ï¸(orderDetail)±í
 create sequence seq_orderDetail start with 1;
 create table orderDetail
 (
-  odid integer primary key,  --è‡ªå¢ä¸»é”®
-  orderId integer references orders(orderid),        --å®šå•è¡¨å¤–é”®
-  bookId integer references book(bookid),        --å›¾ä¹¦è¡¨å¤–é”®
-  quantity integer        --è¯¥ç±»å•†å“çš„è´­ä¹°æ•°é‡
+  odid integer primary key,  --×ÔÔöÖ÷¼ü
+  orderId integer references orders(orderid),        --¶¨µ¥±íÍâ¼ü
+  bookId integer references book(bookid),        --Í¼Êé±íÍâ¼ü
+  quantity integer        --¸ÃÀàÉÌÆ·µÄ¹ºÂòÊıÁ¿
 );
 insert into orderDetail values(seq_orderDetail.Nextval,1,1,1);
 --select * from orderDetail

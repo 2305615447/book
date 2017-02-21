@@ -15,7 +15,7 @@
 	<div data-options="region:'north'" style="height: 65px;">
 		<div id="header">
 			<div id="top_login">
-				<label> 欢迎【<span>${loginUser.username}</span>】使用银行信用管理系统</label>
+				<label> 欢迎【<span>${loginUser.username}</span>】使用book管理系统</label>
 			</div>
 			<div id="nav"></div>
 		</div>
@@ -27,7 +27,7 @@
 				新闻热线：010-627488888 <br /> 文明办网文明上网举报电话：010-627488888 &#160;&#160;&#160;&#160; 举报邮箱： <a href="#">jubao@jb-aptech.com.cn</a>
 			</p>
 			<p class="copyright">
-				Copyright &copy; 1999-2009 News China gov, All Right Reserver <br /> 新闻中国 版权所有
+				Copyright &copy; 1999-2009 book, All Right Reserver <br /> book 版权所有
 			</p>
 		</div>
 	</div>
